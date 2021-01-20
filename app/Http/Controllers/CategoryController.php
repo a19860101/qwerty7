@@ -25,6 +25,8 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        $categories = Category::get();
+        return view('category.create',compact('categories'));
     }
 
     /**
@@ -36,6 +38,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        Category::create($request->all());
+        return redirect()->route('category.create');
     }
 
     /**
@@ -81,5 +85,8 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category->delete();
+
+        return redirect()->route('category.create');
     }
 }
