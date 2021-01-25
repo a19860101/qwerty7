@@ -28,8 +28,16 @@ Route::get('/', function () {
 // Route::put('/posts/{id}','PostController@update')->name('posts.update');
 
 
-Route::resource('/posts','PostController');
+// Route::resource('/posts','PostController')->middleware('auth');
+
+Route::group(['middleware' => 'auth'],function(){
+    Route::resource('/posts','PostController')->except('index','show');
+});
+Route::resource('/posts','PostController')->only('index','show');
+
 Route::resource('/category','CategoryController');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
