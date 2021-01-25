@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -82,6 +83,7 @@ class PostController extends Controller
        
        
         $post->fill($request->all());
+        $post->user_id = Auth::id();
         $post->category_id = $request->category_id;
         $post->cover = $cover;
         $post->save();

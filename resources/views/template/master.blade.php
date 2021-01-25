@@ -17,9 +17,11 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/posts">文章列表</a>
                 </li>
+                @auth
                 <li class="nav-item">
                     <a class="nav-link" href="/posts/create">新增文章</a>
                 </li>
+                @endauth
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('category.create')}}">新增分類</a>
                 </li>
