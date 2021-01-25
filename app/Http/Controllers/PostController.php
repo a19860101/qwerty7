@@ -74,7 +74,8 @@ class PostController extends Controller
         if($request->file('cover')){
             $ext = $request->file('cover')->getClientOriginalExtension();
             $cover = Str::uuid().'.'.$ext;
-            $request->file('cover')->storeAs('public/images',$cover.'.'.$ext);
+            // $request->file('cover')->storeAs('public/images',$cover.'.'.$ext);
+            $request->file('cover')->storeAs('public/images',$cover);
         }else{
             $cover = '';
         }

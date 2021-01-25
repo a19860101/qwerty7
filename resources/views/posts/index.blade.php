@@ -10,8 +10,7 @@
         <div class="col-xl-8 col-10">
             <h3>{{$post->title}}</h3>
             <div>
-                <img src="{{asset($post->cover)}}" alt="">
-                {{asset('public/storage/images/'.$post->cover)}}
+                <img src="{{asset('storage/images/'.$post->cover)}}" alt="" class="w-100">
             </div>
             <div>
                 分類: <span class="badge badge-secondary">
