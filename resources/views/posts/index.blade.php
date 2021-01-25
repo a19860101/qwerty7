@@ -13,6 +13,9 @@
                 <img src="{{asset('storage/images/'.$post->cover)}}" alt="" class="w-100">
             </div>
             <div>
+                作者: {{$post->user->name}}
+            </div>
+            <div>
                 分類: <span class="badge badge-secondary">
                    {{$post->category->title}}
                 </span>
