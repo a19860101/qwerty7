@@ -15,6 +15,10 @@
                     <input type="file" name="cover" id="cover">
                 </div>
                 <div class="form-group">
+                    <label for="tag">標籤</label>
+                    <input type="text" name="tag" id="tag" class="form-control">
+                </div>
+                <div class="form-group">
                     <label for="category_id">文章分類</label>
                     <select name="category_id" id="category_id" class="form-control">
                         @foreach($categories as $cate)

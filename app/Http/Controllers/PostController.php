@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Category;
+use App\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -88,6 +89,15 @@ class PostController extends Controller
         $post->cover = $cover;
         $post->save();
 
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            // $tagModel = Tag::create(['title'=>$tag]);
+            $tagModel = Tag::firstOrCreate(['title'=>$tag]);
+
+            // echo $tagModel->id;
+
+            $post->tags()->attach($tagModel->id);
+        }
         return redirect()->route('posts.index');
 
        
