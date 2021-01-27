@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-xl-8 col-10 mx-auto">
             <h2>編輯文章</h2>
+            <div>作者 {{$post->user->name}}</div>
             <form action="{{route('posts.update',['post'=>$post->id])}}" method="post">
                 @csrf
                 @method('put')
@@ -12,6 +13,20 @@
                     <label for="title">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control" value="{{$post->title}}">
                 </div>
+                @php
+                    $tagTitle = [];
+                    foreach($post->tags as $tag){
+                        $tagTitle[] = $tag->title;
+                    }
+                    $tagString = implode(',',$tagTitle);
+                    echo $tagString;
+
+                @endphp
+                <div class="form-group">
+                    <label for="tag">標籤</label>
+                    <input type="text" name="tag" id="tag" class="form-control" value="{{$tagString}}">
+                </div>
+                
                 <div class="form-group">
                     <label for="category_id">文章分類</label>
                     <select name="category_id" id="category_id" class="form-control">

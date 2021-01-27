@@ -172,6 +172,16 @@ class PostController extends Controller
         $post->category_id = $request->category_id;
         $post->save();
 
+        $post->tags()->detach();
+        
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            $tagModel = Tag::firstOrCreate(['title'=>$tag]);
+
+            $post->tags()->attach($tagModel->id);
+        }
+        
+        
         return redirect()-> route('posts.index');
     }
 
