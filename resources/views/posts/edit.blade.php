@@ -19,12 +19,10 @@
                         $tagTitle[] = $tag->title;
                     }
                     $tagString = implode(',',$tagTitle);
-                    echo $tagString;
-
                 @endphp
                 <div class="form-group">
                     <label for="tag">標籤</label>
-                    <input type="text" name="tag" id="tag" class="form-control" value="{{$tagString}}">
+                    <input type="text" name="tag" id="tag" class="form-control" value="{{$post->toTagString()}}">
                 </div>
                 
                 <div class="form-group">
