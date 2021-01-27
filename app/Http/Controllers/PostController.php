@@ -207,6 +207,11 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
     public function postsTag(Tag $tag){
-        return $tag;
+        $posts = $tag->posts;
+
+        return view('posts.tag',compact('posts'));
+    }
+    public function postsCategory(Category $category){
+        return $category->posts;
     }
 }

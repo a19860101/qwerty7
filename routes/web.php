@@ -39,6 +39,7 @@ Route::resource('/category','CategoryController');
 
 
 Route::get('/posts/tag/{tag}','PostController@postsTag')->name('posts.tag');
+Route::get('/posts/category/{category}','PostController@postsCategory')->name('posts.category');
 
 Auth::routes();
 

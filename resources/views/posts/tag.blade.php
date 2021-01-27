@@ -2,10 +2,6 @@
 @section('content')
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-xl-8 col-10">
-            <h2>文章列表</h2>
-            <hr>
-        </div>
         @foreach($posts as $post)
         <div class="col-xl-8 col-10">
             <h3>{{$post->title}}</h3>
@@ -21,9 +17,9 @@
                 作者: {{$post->user->name}}
             </div>
             <div>
-                分類: <a href="{{route('posts.category',['category'=>$post->category_id])}}" class="badge badge-secondary">
+                分類: <span class="badge badge-secondary">
                    {{$post->category->title}}
-                </a>
+                </span>
             </div>
             <div class="content">
                 
@@ -39,6 +35,7 @@
             </div>
         <hr>
         </div>
+
         @endforeach
     </div>
 </div>
