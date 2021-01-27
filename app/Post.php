@@ -20,7 +20,7 @@ class Post extends Model
     }
 
     public function toTagString(){
-        $tagTitie = [];
+        $tagTitle = [];
         foreach($this->tags as $tag){
             $tagTitle[] = $tag->title;
         }

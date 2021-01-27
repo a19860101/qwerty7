@@ -38,6 +38,8 @@ Route::resource('/posts','PostController')->only('index','show');
 Route::resource('/category','CategoryController');
 
 
+Route::get('/posts/tag/{tag}','PostController@postsTag')->name('posts.tag');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

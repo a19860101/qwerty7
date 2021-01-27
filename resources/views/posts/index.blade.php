@@ -10,6 +10,11 @@
         <div class="col-xl-8 col-10">
             <h3>{{$post->title}}</h3>
             <div>
+                @foreach($post->tags as $tag)
+                    <a href="{{route('posts.tag',['tag'=>$tag->id])}}" class="badge badge-info">{{$tag->title}}</a>
+                @endforeach
+            </div>
+            <div>
                 <img src="{{asset('storage/images/'.$post->cover)}}" alt="" class="w-100">
             </div>
             <div>

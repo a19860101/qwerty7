@@ -173,7 +173,7 @@ class PostController extends Controller
         $post->save();
 
         $post->tags()->detach();
-        
+
         $tags = explode(',',$request->tag);
         foreach($tags as $tag){
             $tagModel = Tag::firstOrCreate(['title'=>$tag]);
@@ -205,5 +205,8 @@ class PostController extends Controller
         Post::destroy($post->id);
 
         return redirect()->route('posts.index');
+    }
+    public function postsTag(Tag $tag){
+        return $tag;
     }
 }
