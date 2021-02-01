@@ -222,6 +222,7 @@ class PostController extends Controller
         return view('posts.category',compact('posts'));
     }
     public function trash(){
-        return 'Hello Trash!!';
+        $posts = Post::onlyTrashed()->get();
+        return view('posts.trash',compact('posts'));
     }
 }
