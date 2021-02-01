@@ -36,6 +36,17 @@
         </div>
     </div>
 </div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            @if($errors->any())
+                @foreach($errors->all() as $error)
+                <div class="alert alert-danger" >{{$error}}</div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+</div>
 <script src="https://cdn.ckeditor.com/4.15.1/full/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('content');
