@@ -212,6 +212,9 @@ class PostController extends Controller
         return view('posts.tag',compact('posts'));
     }
     public function postsCategory(Category $category){
-        return $category->posts;
+        // return $category->posts;
+        $posts = $category->posts;
+
+        return view('posts.category',compact('posts'));
     }
 }
