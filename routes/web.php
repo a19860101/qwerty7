@@ -44,3 +44,5 @@ Route::get('/posts/category/{category}','PostController@postsCategory')->name('p
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/trash','PostController@trash')->name('trash.index');

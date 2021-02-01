@@ -26,7 +26,7 @@
                     <a class="nav-link" href="{{route('category.create')}}">新增分類</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="{{route('trash.index')}}">垃圾桶</a>
                 </li>
             </ul>
             <!-- Right Side Of Navbar -->

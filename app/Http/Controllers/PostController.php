@@ -221,4 +221,7 @@ class PostController extends Controller
 
         return view('posts.category',compact('posts'));
     }
+    public function trash(){
+        return 'Hello Trash!!';
+    }
 }
