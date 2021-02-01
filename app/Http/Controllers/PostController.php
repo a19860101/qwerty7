@@ -83,7 +83,7 @@ class PostController extends Controller
         }
        
         $request -> validate([
-            'title'     => 'required | size:10',
+            'title'     => 'required | max:10',
             'content'   =>  'required'
         ]);
 

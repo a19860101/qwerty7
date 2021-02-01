@@ -8,7 +8,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">文章標題</label>
-                    <input type="text" name="title" id="title" class="form-control">
+                    <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}">
                 </div>
                 <div class="form-group">
                     <label for="cover">封面圖片</label>
@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="tag">標籤</label>
-                    <input type="text" name="tag" id="tag" class="form-control">
+                    <input type="text" name="tag" id="tag" class="form-control" value="{{old('tag')}}">
                 </div>
                 <div class="form-group">
                     <label for="category_id">文章分類</label>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="content">內文</label>
-                    <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{old('content')}}</textarea>
                 </div>
                 <input type="submit" class="btn btn-primary" value="新增文章">
                 <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
