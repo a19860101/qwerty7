@@ -82,7 +82,11 @@ class PostController extends Controller
             $cover = '';
         }
        
-       
+        $request -> validate([
+            'title'     => 'required | size:10',
+            'content'   =>  'required'
+        ]);
+
         $post->fill($request->all());
         $post->user_id = Auth::id();
         $post->category_id = $request->category_id;
