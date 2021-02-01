@@ -26,6 +26,7 @@
                             @method('delete')
                             <input type="submit" value="清除" class="btn btn-danger" onclick="return confirm('確認刪除？')">
                         </form>
+                        <a href="{{route('trash.restore',['id' => $post->id])}}" class="btn btn-success">還原</a>
                     </td>
                 </tr>
                 @endforeach
