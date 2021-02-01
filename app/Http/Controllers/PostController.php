@@ -225,4 +225,7 @@ class PostController extends Controller
         $posts = Post::onlyTrashed()->get();
         return view('posts.trash',compact('posts'));
     }
+    public function trashDelete($id){
+        return $id;
+    }
 }
