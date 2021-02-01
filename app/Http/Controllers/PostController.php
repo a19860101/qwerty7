@@ -226,6 +226,7 @@ class PostController extends Controller
         return view('posts.trash',compact('posts'));
     }
     public function trashDelete($id){
-        return $id;
+        Post::onlyTrashed()->find($id)->forceDelete();
+        return redirect()->route('trash.index');
     }
 }
